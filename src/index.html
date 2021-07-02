@@ -5,29 +5,54 @@
 <body>
   <div class="container">
     <h1>Currency Exchange</h1>
-    <p>Convert your currency by entering an amount in U.S. dollars and a conversion rate!</p>
+    <p>Convert your currency by entering an amount from one currency to another!</p>
     <div class="row">
       <div class="col-md-3">
-        <input id="amount" type="text" placeholder="Enter U.S. Dollars">
+        <label for="amount">Enter currency amount:</label>
+        <input id="amount" type="text" >
       </div>
-      <div class="col-md-3">
-        <select class="form-control" id="currency">
-          <option value = "ARS">Argentine Peso</option>
-          <option value = "AUD">Australian Dollar</option>
-          <option value = "BTC">Bitcoin Cash</option>
-          <option value = "CNY">Chinese Yuan</option>
-          <option value = "DKK">Danish Krone</option>
-          <option value = "EUR">Euro</option>
-          <option value = "JPY">Japanese Yen</option>
-          <option value = "MXN">Mexican Peso</option>
-          <option value = "TWD">Taiwan Dollar</option>
-          <option value = "AUD">Vietnamese Dong</option>
-        </select>
+      <div class="col-md-2">
+        <label for="currency1">From:</label>
+          <select class="form-control" id="currency1">
+            <option value = "USD" selected>U.S. Dollar</option>
+            <option value = "ARS">Argentine Peso</option>
+            <option value = "AUD">Australian Dollar</option>
+            <option value = "BTC">Bitcoin Cash</option>
+            <option value = "CNY">Chinese Yuan</option>
+            <option value = "DKK">Danish Krone</option>
+            <option value = "EUR">Euro</option>
+            <option value = "JPY">Japanese Yen</option>
+            <option value = "MXN">Mexican Peso</option>
+            <option value = "TWD">Taiwan Dollar</option>
+            <option value = "VND">Vietnamese Dong</option>
+          </select>
       </div>
-    </div> 
+      <div class="col-md-1"></div>
+      <div class="col-md-2">
+        <label for="currency2">To:</label>
+          <select class="form-control" id="currency2">
+            <option value = "USD">U.S. Dollar</option>
+            <option value = "ARS">Argentine Peso</option>
+            <option value = "AUD">Australian Dollar</option>
+            <option value = "BTC">Bitcoin Cash</option>
+            <option value = "CNY">Chinese Yuan</option>
+            <option value = "DKK">Danish Krone</option>
+            <option value = "EUR" selected>Euro</option>
+            <option value = "JPY">Japanese Yen</option>
+            <option value = "MXN">Mexican Peso</option>
+            <option value = "TWD">Taiwan Dollar</option>
+            <option value = "VND">Vietnamese Dong</option>
+          </select>
+      </div>
+      <div class="col-md-1"></div>
+        <div class="col-md-2">
+          <label for="outputAmount">Converted Amount:</label>
+          <div id="outputAmount"></div>
+        </div>
+      </div> 
     <button class="btn-success" id="convert">Convert</button>
-    <div class="showErrors"></div>
-    <div class="showRates"></div>
+    <div id="showErrors"></div>
+    <div id="showRates"></div>
     </div>
   </div>
 </body>
