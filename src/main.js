@@ -2,32 +2,33 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import WeatherService from './weather-service.js';
+import CurrencyService from './currency-service.js';
 
+//clear input and output fields
 function clearFields() {
-  $('#location').val("");
+  $('#amount').val("");
   $('.showErrors').text("");
-  $('.showHumidity').text("");
-  $('.showTemp').text("");
+  $('.showRates').text("");
 }
 
-function getElements(response) {
-  if (response.main) {
-    $('.showHumidity').text(`The humidity in ${response.name} is ${response.main.humidity}%`);
-    $('.showTemp').text(`The temperature in Kelvins is ${response.main.temp} degrees.`);
+function displayRates(response, rate) {
+  if (response.result === "success") {
+    $('.showRates').text(`The rate in ${rate} is ${response.conversion_rates.AED}`);
   } else {
     $('.showErrors').text(`There was an error: ${response}`);
   }
 }
 
-async function makeApiCall(city) {
-  const response = await WeatherService.getWeather(city);
-  getElements(response);
+//make the api call to fetch rates
+async function makeApiCall(rate) {
+  const response = await CurrencyService.getCurrency();
+  console.log(response);
+  displayRates(response, rate);
 }
 
 $(document).ready(function() {
-  $('#weatherLocation').click(function() {
-    let city = $('#location').val();
+  $('#convert').click(function() {
+    let city = $('#amount').val();
     clearFields();
     makeApiCall(city);
   });
