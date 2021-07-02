@@ -3,9 +3,12 @@
   <title>Currency Exchanger</title>
 </head>
 <body>
+  
   <div class="container">
-    <h1>Currency Exchange</h1>
-    <p>Convert your currency by entering an amount from one currency to another!</p>
+    <div id="title">
+      <h1>Currency Exchange</h1>
+      <p>Instruction: Convert your currency by entering an amount from one currency to another!</p>
+    </div>
     <div class="row">
       <div class="col-md-3">
         <label for="amount">Enter currency amount:</label>
@@ -20,6 +23,7 @@
             <option value = "BTC">Bitcoin Cash</option>
             <option value = "CNY">Chinese Yuan</option>
             <option value = "DKK">Danish Krone</option>
+            <option value = "D">Doge Coin</option>
             <option value = "EUR">Euro</option>
             <option value = "JPY">Japanese Yen</option>
             <option value = "MXN">Mexican Peso</option>
@@ -37,6 +41,7 @@
             <option value = "BTC">Bitcoin Cash</option>
             <option value = "CNY">Chinese Yuan</option>
             <option value = "DKK">Danish Krone</option>
+            <option value = "D">Doge Coin</option>
             <option value = "EUR" selected>Euro</option>
             <option value = "JPY">Japanese Yen</option>
             <option value = "MXN">Mexican Peso</option>
@@ -50,9 +55,9 @@
           <div id="outputAmount"></div>
         </div>
       </div> 
-    <button class="btn-success" id="convert">Convert</button>
-    <div id="showErrors"></div>
-    <div id="showRates"></div>
+    <button class="btn-warning" id="convert">Convert</button>
+    <h3 id="showErrors"></h3>
+    <h3 id="showRates"></h3>
     </div>
   </div>
 </body>

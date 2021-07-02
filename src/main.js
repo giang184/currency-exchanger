@@ -4,26 +4,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyService from './currency-service.js';
 
-//clear input and output fields
-// function clearFields() {
-//   $('#amount').val("");
-//   $('.showErrors').text("");
-//   $('.showRates').text("");
-// }
-
 function displayRates(response, amount, currency1, currency2) {
   if (response.result === "success") {
     if(!response.conversion_rates[currency1] && !response.conversion_rates[currency2]) {
+      $('#showRates').text("");
       $('#showErrors').text(`Sorry, we don't have a conversion rate for ${currency1} or ${currency2}`);
     } else if(!response.conversion_rates[currency1]) {
+      $('#showRates').text("");
       $('#showErrors').text(`Sorry, we don't have a conversion rate for ${currency1}`);
     } else if (!response.conversion_rates[currency2]) {
+      $('#showRates').text("");
       $('#showErrors').text(`Sorry, we don't have a conversion rate for ${currency2}`);
     } else {
       if(!amount) {
+        $('#showRates').text("");
         $('#showErrors').text(`Please enter a currency amount`);
       }
       else{
+        $('#showErrors').text("");
         $('#showRates').text(`$${amount} ${currency1} is equal to $${(amount/response.conversion_rates[currency1]*response.conversion_rates[currency2]).toFixed(2)} ${currency2}`);
         $('#outputAmount').html(`$${(amount/response.conversion_rates[currency1]*response.conversion_rates[currency2]).toFixed(2)}`);
         $('#outputAmount').show();
