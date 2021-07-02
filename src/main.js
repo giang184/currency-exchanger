@@ -45,7 +45,6 @@ $(document).ready(function() {
     const amount = $('#amount').val();
     const currency1 = $("#currency1").val();
     const currency2 = $("#currency2").val();
-    // clearFields();
     makeApiCall(amount, currency1, currency2);
   });
 });

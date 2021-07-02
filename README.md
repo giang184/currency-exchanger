@@ -5,7 +5,7 @@
 
 ### Project Description
 
-##### This project is a web application that will exchange your U.S. dollars into one of several currency in the drop down menu.
+##### This project is a web application that will convert between several currencies in the drop down menu.
 ---
 ### Tech Stack
 1. HTML5+CSS3
