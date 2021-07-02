@@ -11,25 +11,26 @@ function clearFields() {
   $('.showRates').text("");
 }
 
-function displayRates(response, rate) {
+function displayRates(response, amount, currency) {
   if (response.result === "success") {
-    $('.showRates').text(`The rate in ${rate} is ${response.conversion_rates.AED}`);
+    $('.showRates').text(`${amount} U.S. dollars is equal to ${(amount*response.conversion_rates[currency]).toFixed(2)} ${currency}!`);
   } else {
     $('.showErrors').text(`There was an error: ${response}`);
   }
 }
 
 //make the api call to fetch rates
-async function makeApiCall(rate) {
+async function makeApiCall(amount, currency) {
   const response = await CurrencyService.getCurrency();
   console.log(response);
-  displayRates(response, rate);
+  displayRates(response, amount, currency);
 }
 
 $(document).ready(function() {
   $('#convert').click(function() {
-    let city = $('#amount').val();
+    const amount = $('#amount').val();
+    const currency = $("#currency").val();
     clearFields();
-    makeApiCall(city);
+    makeApiCall(amount, currency);
   });
 });
