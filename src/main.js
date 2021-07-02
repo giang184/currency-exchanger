@@ -13,7 +13,17 @@ function clearFields() {
 
 function displayRates(response, amount, currency) {
   if (response.result === "success") {
-    $('.showRates').text(`${amount} U.S. dollars is equal to ${(amount*response.conversion_rates[currency]).toFixed(2)} ${currency}!`);
+    if(response.conversion_rates[currency]) {
+      if(!amount) {
+        $('.showErrors').text(`Please enter a U.S. dollar amount`);
+      }
+      else{
+        $('.showRates').text(`${amount} U.S. dollars is equal to ${(amount*response.conversion_rates[currency]).toFixed(2)} ${currency}`);
+      }
+    }
+    else {
+      $('.showErrors').text(`Sorry, we don't have a conversion rate for ${currency}`);
+    }
   } else {
     $('.showErrors').text(`There was an error: ${response}`);
   }
@@ -22,12 +32,12 @@ function displayRates(response, amount, currency) {
 //make the api call to fetch rates
 async function makeApiCall(amount, currency) {
   const response = await CurrencyService.getCurrency();
-  console.log(response);
   displayRates(response, amount, currency);
 }
 
 $(document).ready(function() {
-  $('#convert').click(function() {
+  $('#convert').click(function(event) {
+    event.preventDefault();
     const amount = $('#amount').val();
     const currency = $("#currency").val();
     clearFields();
