@@ -19,7 +19,7 @@
 ---
 
 ### Installation Instructions
-1. clone [this](https://github.com/giang184/Super-Galactic-Age-Calculator) repository to your desktop
+1. clone [this](https://github.com/giang184/currency-exchanger) repository to your desktop
 2. Enter new directory `cd REPO DIR`
 3. Install dependencies with `npm install`
 4. You will need to create your own API from [ExchangeRate-API](https://www.exchangerate-api.com/)

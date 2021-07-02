@@ -33,8 +33,10 @@ label {
 #showErrors {
   padding-top: 30px;
   text-align: center;
+  color: red;
 }
 
 #showRates {
   text-align: center;
+  color: rgb(33, 18, 235);
 }

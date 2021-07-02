@@ -12,9 +12,11 @@ function displayRates(response, amount, currency1, currency2) {
     } else if(!response.conversion_rates[currency1]) {
       $('#showRates').text("");
       $('#showErrors').text(`Sorry, we don't have a conversion rate for ${currency1}`);
+      $('#outputAmount').hide();
     } else if (!response.conversion_rates[currency2]) {
       $('#showRates').text("");
       $('#showErrors').text(`Sorry, we don't have a conversion rate for ${currency2}`);
+      $('#outputAmount').hide();
     } else {
       if(!amount) {
         $('#showRates').text("");
