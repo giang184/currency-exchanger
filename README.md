@@ -15,7 +15,7 @@
 5. webpack/webpack-cli/webpack dev server
 6. eslint
 7. babel transpiler
-8. APIs
+8. NPM
 ---
 
 ### Installation Instructions
