@@ -20,7 +20,7 @@
 
 ### Installation Instructions
 1. clone [this](https://github.com/giang184/currency-exchanger) repository to your desktop
-2. Enter new directory `cd REPO DIR`
+2. Enter downloaded directory
 3. Install dependencies with `npm install`
 4. You will need to create your own API from [ExchangeRate-API](https://www.exchangerate-api.com/)
 5. Once you have your API key, place your token in an .env file at the top level of your directory.
