@@ -23,8 +23,9 @@
 2. Enter downloaded directory
 3. Install dependencies with `npm install`
 4. You will need to create your own API from [ExchangeRate-API](https://www.exchangerate-api.com/)
-5. Once you have your API key, place your token in an .env file at the top level of your directory.
+5. Once you have your API key, place your token in an `.env` file at the top level of your directory.
 6. Then to run this project locally, use the npm dev command `npm run start`
+7. On the live server, you can enter an amount and select which currencies you want to convert. There are some currencies (bitcoin and dogecoin) that are not available to be pulled from `exchangerate-api` so those will come back with an error message.
 ---
 ### Known Issues:
 * NO KNOWN ISSUES
